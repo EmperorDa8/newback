@@ -11,8 +11,13 @@ full_path=os.getcwd()+path
 def upload_desc():
   for item in os.listdir(full_path):
     if item.endswith(".txt"):
-      item.split(",")
-      fruit_name=item[0]
-      with open(full_path+item) as f:
+      fruit_name=os.path.splitext(item)[0]
+      with open(full_path+item,"r") as f:
         data=f.read().split("\n")
-        fruit_data={"name":data[0],"weight":data[1].strip("ibs"), "description":data[2], "image_name":fruit_name+(".jpeg")}
+        fruit_data= {"name":data[0], "weight":data[1].strip("ibs"), "description":data[2], "image_name":fruit_name+(".jpeg")
+        r = requests.post(url, json=fruit_data)
+        print (r.status_code)
+        print ("upload success")
+
+upload_desc()
+
