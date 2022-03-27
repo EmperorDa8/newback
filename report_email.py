@@ -28,4 +28,5 @@ if __name__ == "__main__":
     content=generate_raw(path)
     generate_report("/tmp/processed.pdf",title,content)
     Attachment="/tmp/processed.pdf"
-
+    msg=emails.generate_email(From, To, subject_line, email_body, Attachment)
+    emails,send_email(msg)
