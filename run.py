@@ -7,7 +7,7 @@ import json
 
 path="/supplier_data/descriptions/"
 full_path=os.getcwd()+path
-url="http://localhost/fruits"
+url="http://localhost/fruits/"
 def upload_desc():
   for item in os.listdir(full_path):
     if item.endswith(".txt"):
