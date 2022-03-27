@@ -20,7 +20,12 @@ def generate_raw(path):
 if __name__ == "__main__":
     path="supplier_data/descriptions/"
     title="process updated on"+ current_date
+    From="automation@example.com"
+    To="username@example.com"
+    subject_line="Upload Completed - Online Fruit Store"
+    email_body="All fruits are uploaded to our website successfully. A detailed list is attached to this email."
     #pdf generate
     content=generate_raw(path)
     generate_report("/tmp/processed.pdf",title,content)
+    Attachment="/tmp/processed.pdf"
 
