@@ -5,11 +5,11 @@ import os
 import smtplib
 
 
-def generate_email(sender,recipient,subject,body,attachment_path):
+def generate_email(From,To,subject_line,body,Attachment):
     msg=email.message.EmailMessage()
-    msg["From"]=sender
-    msg["To"]=recipient
-    msg["Subject"]=subject
+    msg["From"]=From
+    msg["To"]=To
+    msg["Subject"]=subject_line
     msg.set_content(body)
 
     if not attachment_path==" ":
